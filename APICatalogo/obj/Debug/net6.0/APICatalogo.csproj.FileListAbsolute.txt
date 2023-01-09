@@ -39,9 +39,3 @@ C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalo
 C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\MySqlConnector.dll
 C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-C:\Users\susilva\Documents\Kiosk_training\webApi_macoratti\APICatalogo\APICatalogo\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
