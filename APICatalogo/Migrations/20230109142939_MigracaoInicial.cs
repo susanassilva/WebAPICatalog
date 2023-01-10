@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace APICatalogo.Migrations
 {
-    public partial class MigracaoInicial : Migration
+    public partial class MigracaoInicial : Migration //classe que pode ser divida em outras partes
     {
-        protected override void Up(MigrationBuilder migrationBuilder)
+        protected override void Up(MigrationBuilder migrationBuilder) //MigrationBuilder -> operacionaliza migrações
         {
             migrationBuilder.AlterDatabase()
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -18,8 +18,8 @@ namespace APICatalogo.Migrations
                 columns: table => new
                 {
                     CategoriaId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn), //coluna com chave primária incremental
+                    Nome = table.Column<string>(type: "longtext", nullable: true) //longtext até 4GB, logo deve ser alterado
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ImagemUrl = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -50,12 +50,12 @@ namespace APICatalogo.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Produtos", x => x.ProdutoId);
-                    table.ForeignKey(
+                    table.ForeignKey( //declaração de chave estrangeira
                         name: "FK_Produtos_Categorias_CategoriaId",
                         column: x => x.CategoriaId,
                         principalTable: "Categorias",
                         principalColumn: "CategoriaId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Cascade); //as infos serão excluídas em cascata
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -65,7 +65,7 @@ namespace APICatalogo.Migrations
                 column: "CategoriaId");
         }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
+        protected override void Down(MigrationBuilder migrationBuilder) //desfazer o que foi realizado
         {
             migrationBuilder.DropTable(
                 name: "Produtos");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj": {}
+    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj": {
+    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+        "projectUniqueName": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj",
         "projectName": "APICatalogo",
-        "projectPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+        "projectPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj",
         "packagesPath": "C:\\Users\\susilva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\obj\\",
+        "outputPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
