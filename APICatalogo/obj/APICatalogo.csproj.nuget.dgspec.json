@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj": {}
+    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj": {
+    "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj",
+        "projectUniqueName": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
         "projectName": "APICatalogo",
-        "projectPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\APICatalogo.csproj",
+        "projectPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
         "packagesPath": "C:\\Users\\susilva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\ApiCatalogo\\obj\\",
+        "outputPath": "C:\\Users\\susilva\\Documents\\Kiosk_training\\webApi_macoratti\\APICatalogo\\APICatalogo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -60,11 +60,19 @@
               "target": "Package",
               "version": "[6.0.12, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.11, )"
             },
             "MySqlConnector": {
               "target": "Package",
