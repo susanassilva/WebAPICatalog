@@ -21,7 +21,7 @@ namespace APICatalogo.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Produto>> GetProdutos() //IEnumerable permite adiar a execução, trabalha por demanda e não precisa da coleção na memória
         {
-            var produtos = _context.Produtos.ToList();
+            var produtos = _context.Produtos.AsNoTracking().ToList();
 
             //código de status de erro http
             if (produtos is null)
