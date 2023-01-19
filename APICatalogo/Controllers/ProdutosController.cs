@@ -1,8 +1,6 @@
-﻿using APICatalogo.Context;
-using APICatalogo.Models;
-using Microsoft.AspNetCore.Http;
+﻿using APICatalogo.Models;
+using APICatalogo.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace APICatalogo.Controllers
 {
@@ -10,18 +8,24 @@ namespace APICatalogo.Controllers
     [ApiController]
     public class ProdutosController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IUnitOfWork _uow;
 
 
-        public ProdutosController(AppDbContext context)
+        public ProdutosController(IUnitOfWork uow)
         {
-            _context = context;
+            _uow = uow;
+        }
+
+        [HttpGet("menorpreco")]
+        public ActionResult<IEnumerable<Produto>> GetProdutosPrecos()
+        {
+            return _uow.ProdutoRepository.GetProdutosPorPreco().ToList();
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Produto>> GetProdutos() //IEnumerable permite adiar a execução, trabalha por demanda e não precisa da coleção na memória
+        public ActionResult<IEnumerable<Produto>> Get() //IEnumerable permite adiar a execução, trabalha por demanda e não precisa da coleção na memória
         {
-            var produtos = _context.Produtos.AsNoTracking().ToList();
+            var produtos =_uow.ProdutoRepository.Get().ToList();
 
             //código de status de erro http
             if (produtos is null)
@@ -31,10 +35,13 @@ namespace APICatalogo.Controllers
             return produtos;
         }
 
-        [HttpGet("{id:int}", Name="ObterProduto")]
+        [HttpGet("{id:int}", Name ="ObterProduto")]
         public ActionResult<Produto> Get(int id)
         {
-            var produto = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
+            //throw new Exception("Exception ao retonar o produto pelo id");
+            
+            
+            var produto = _uow.ProdutoRepository.GetById(p => p.ProdutoId == id);
             if (produto is null)
             {
                 return NotFound("Produto não encontrado...");
@@ -44,10 +51,10 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Produto(Produto produto)
+        public ActionResult Produto([FromBody]Produto produto)
         {
-            _context.Produtos.Add(produto); //incluindo no contexto e trabalhando na memória
-            _context.SaveChanges(); //persistência dos dados na tabela
+            _uow.ProdutoRepository.Add(produto); //incluindo no contexto e trabalhando na memória
+            _uow.Commit(); //persistência dos dados na tabela
 
             return new CreatedAtRouteResult("ObterProduto", //retorna um código de status 201 se criado, após adiciona o cabeçalho rotation na resposta.
                 new {id = produto.ProdutoId}, produto); //cria um método 202 no head location
@@ -58,8 +65,8 @@ namespace APICatalogo.Controllers
         {
             if (id != produto.ProdutoId)
                 return BadRequest();
-            _context.Entry(produto).State = EntityState.Modified; //entidade precisa ser persistida;
-            _context.SaveChanges();
+            _uow.ProdutoRepository.Update(produto); //entidade precisa ser persistida;
+            _uow.Commit();
 
             return Ok(produto);
 
@@ -68,12 +75,12 @@ namespace APICatalogo.Controllers
         [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {
-            var produto = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
-            //var produto = _context.Produtos.Find(id) //Alternativa que busca na memória e depois no banco, para isso o id precisa ser primary key
+            var produto = _uow.ProdutoRepository.GetById(p => p.ProdutoId == id);
+            //var produto = _uow.Produtos.Find(id) //Alternativa que busca na memória e depois no banco, para isso o id precisa ser primary key
             if (produto is null)
                 return NotFound("Produto não localizado...");
-            _context.Produtos.Remove(produto);
-            _context.SaveChanges();
+            _uow.ProdutoRepository.Delete(produto);
+            _uow.Commit();
 
             return Ok(produto);
 
